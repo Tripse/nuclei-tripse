@@ -1,0 +1,23 @@
+id: vscode-sftp
+
+info:
+  name: VSCode SFTP Configuration Exposure
+  author: SirBugs
+  severity: high
+  description: Checks for exposed VSCode SFTP configuration file.
+  tags: exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.vscode/sftp.json"
+
+    matchers:
+      - type: word
+        words:
+          - '"protocol":'
+          - '"port":'
+          - '"username":'
+          - '"password":'
+        part: body
+        condition: or

@@ -1,0 +1,1 @@
+This is the template I use for vulnerability hunting, hope it helps you
