@@ -2,10 +2,10 @@ id: api-endpoints
 
 info:
   name: Common API Endpoints
-  author: panch0r3d
+  author: panch0r3d,leadlife
   severity: info
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/server/api/admin"
@@ -58,6 +58,7 @@ requests:
       - "{{BaseURL}}/rest/api/orders"
       - "{{BaseURL}}/rest/api/webhooks"
       - "{{BaseURL}}/docs"
+
     matchers-condition: and
     matchers:
       - type: status

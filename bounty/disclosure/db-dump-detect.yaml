@@ -2,7 +2,7 @@ id: db-dump-detect
 
 info:
   name: exposed DB dumps detection
-  author: Redflare-Cyber
+  author: Redflare-Cyber,leadlife
   severity: high
   description: Detects potentially exposed backup and database files on targets performing a clusterbomb attack.
   classification:
@@ -11,13 +11,12 @@ info:
     cwe-id: CWE-200
   tags: exposure,backup,database,clusterbomb
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}{{dir}}{{filename}}.{{extension}}"
 
     attack: clusterbomb
-
     payloads:
       dir:
         - "/"
@@ -73,6 +72,9 @@ requests:
         - "backupfile"
         - "dbexport"
         - "dbdumpfile"
+        - "index"
+        - "wwww"
+        - "root"
         - "{{Hostname}}"
         - "{{Hostname}}_db"
         - "{{Hostname}}_backup"

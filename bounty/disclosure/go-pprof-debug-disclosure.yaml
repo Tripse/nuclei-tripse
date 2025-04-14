@@ -2,7 +2,7 @@ id: go-pprof-debug-disclosure
 info:
   name: golang language pprof debug - disclosure
   author: leadlife
-  severity: high
+  severity: info
   description: Go pprof 调试信息泄露漏洞
   metadata:
     verified: true
@@ -11,15 +11,12 @@ info:
 
 
 http:
-  - raw:
-      - |
-        GET /api/debug/pprof/ HTTP/1.1
-        Host: {{Hostname}}
+  - method: GET
+    path:
+      - "{{BaseURL}}/api/debug/pprof/"
+      - "{{BaseURL}}/api/debug/pprof/goroutine?debug=1"
 
-      - |
-        GET /api/debug/pprof/goroutine?debug=1 HTTP/1.1
-        Host: {{Hostname}}
-
+    stop-at-first-match: true
     matchers:
       - type: dsl
         dsl:

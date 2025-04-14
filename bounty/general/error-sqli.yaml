@@ -3,9 +3,9 @@ info:
   name: Blind SQL Injection time based detection of sql backend
   author: oscuridad1010
   severity: High
-  tags: sql0
+  tags: sqli,error
 
-requests:
+http:
   - method: GET
     path: 
       - "{{BaseURL}}"

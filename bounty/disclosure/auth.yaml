@@ -5,7 +5,7 @@ info:
   author: lu3ky-13
   severity: info
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -17,8 +17,9 @@ requests:
           - 401
 
       - type: word
+        part: header
         words:
           - "Www-Authenticate:"
           - "Authorization:"
           - "Authorization: Basic"
-        part: header
+        condition: or

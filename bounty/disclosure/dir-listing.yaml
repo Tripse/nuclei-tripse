@@ -3,7 +3,7 @@ id: dir-listing
 info:
   name: Directory listing enabled
   author: _harleo,pentest_swissky,hczdmr
-  severity: info
+  severity: high
   reference:
     - https://portswigger.net/kb/issues/00600100_directory-listing
   metadata:

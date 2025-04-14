@@ -28,6 +28,7 @@ http:
         - "{{date_time('%Y')}}" # 2023
         - "ROOT" # tomcat
         - "wwwroot"
+        - "root"
         - "htdocs"
         - "www"
         - "html"
@@ -47,6 +48,7 @@ http:
         - "backup_4"
         - "backups"
         - "bin"
+        - "index"
         - "temp"
         - "bak"
         - "db"

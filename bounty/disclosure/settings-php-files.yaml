@@ -24,6 +24,7 @@ http:
       - "{{BaseURL}}/settings.php.txt"
       - "{{BaseURL}}/config/settings.old.php"
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

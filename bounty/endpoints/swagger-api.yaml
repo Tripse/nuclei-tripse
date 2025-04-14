@@ -11,7 +11,6 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 59
     shodan-query: "http.title:\"swagger\""
   tags: exposure,api,swagger
 
@@ -169,6 +168,9 @@ http:
         - "/api/documentation"
         - "/docs/swagger.json"
         - "/docs/swagger.yaml"
+        - "/jeecg-boot/swagger-resources"
+        - "/jeecg-boot/v2/api-docs"
+        - "/jeecg-boot/v3/api-docs"
 
     headers:
       Accept: text/html
@@ -189,6 +191,7 @@ http:
           - 'openapi:'
           - '"openapi":'
           - 'ReDoc'
+          - 'swaggerVersion'
         condition: or
 
       - type: status

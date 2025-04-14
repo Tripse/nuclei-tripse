@@ -16,6 +16,7 @@ http:
       - "{{BaseURL}}/logs/production.log"
       - "{{BaseURL}}/production.log"
 
+    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

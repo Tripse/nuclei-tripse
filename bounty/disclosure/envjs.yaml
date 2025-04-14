@@ -11,6 +11,7 @@ http:
   - method: GET
     path:
       - '{{BaseURL}}/assets/env.js'
+
     matchers:
       - type: word
         part: body

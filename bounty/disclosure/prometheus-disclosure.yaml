@@ -1,4 +1,4 @@
-id: prometheus
+id: prometheus-disclosure
 
 info:
   name: prometheus Disclosure
@@ -12,6 +12,8 @@ http:
     path:
       - '{{BaseURL}}/prometheus'
       - '{{BaseURL}}/prometheus/prometheus'
+
+    stop-at-first-match: true
     matchers:
       - type: word
         part: body
