@@ -1,0 +1,35 @@
+id: x-forwarded-reflection
+info:
+  name: X-Forwarded Header Reflection
+  author: SirBugs,leadlife
+  severity: medium
+  description: "This template detects the reflection of X-Forwarded headers in the response."
+  tags: xss
+
+http:
+  - raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        X-Forwarded-Host: bing.com
+        X-Forwarded-For: bing.com
+        Connection: close
+
+    matchers:
+      - type: word
+        words:
+          - "bing.com"
+          - "bing.com"
+        part: body
+
+      - type: word
+        words:
+          - "bing.com"
+          - "bing.com"
+        part: headers
+
+    extractors:
+      - type: regex
+        regex:
+          - "bing.com"
+          - "bing.com"
