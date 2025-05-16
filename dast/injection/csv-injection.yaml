@@ -6,6 +6,7 @@ info:
   severity: medium
   description: |
     A CSV injection detection template to identify and prevent CSV injection vulnerabilities by using various payloads that could be interpreted as formulas by spreadsheet applications.
+    CSV注入(CSV Injection）漏洞通常会出现在有导出文件(.csv/.xls)功能的网站中。当导出的文件内容可控时，攻击者通常将恶意负载（公式）注入到输入字段中，用户导出文件打开后，EXCEL会调用本身的动态功能，执行攻击者的恶意代码，从而控制用户计算机
   tags: dast,csv,oast
 
 http:

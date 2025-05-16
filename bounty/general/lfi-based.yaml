@@ -1,4 +1,4 @@
-id: LFI
+id: lfi-based
 
 info:
   name: Local File Inclusion
@@ -63,7 +63,6 @@ http:
       - '{{BaseURL}}\\\../../../../../windows\\\system32\\\drivers\\\etc\\\hosts'
 
     stop-at-first-match: true
-    matchers-condition: and
     matchers:
       - type: regex
         part: body

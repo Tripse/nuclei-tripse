@@ -1,14 +1,12 @@
-id: linux-lfi-fuzz
+id: lfi-linux
 
 info:
   name: Local File Inclusion - Linux
-  author: DhiyaneshDK
+  author: DhiyaneshDK, leadlife
   severity: high
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Directory%20Traversal/Intruder/directory_traversal.txt
     - https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/File%20Inclusion
-  metadata:
-    max-request: 46
   tags: lfi,dast,linux
 
 http:

@@ -1,13 +1,11 @@
 id: lfi-keyed
 
 info:
-  name: LFI Detection - Keyed
-  author: pwnhxl
+  name: Key LFI Detection
+  author: pwnhxl,leadlife
   severity: high
   reference:
     - https://owasp.org/www-community/attacks/Unicode_Encoding
-  metadata:
-    max-request: 25
   tags: dast,pathtraversal,lfi
 
 variables:
@@ -21,10 +19,9 @@ variables:
   fuzz_bypass_waf_regx: "./.././.././.././.././.././.././.././.././.././.././.././.././.././.././../"
 
 http:
-  - pre-condition:
-      - type: dsl
-        dsl:
-          - 'method == "GET"'
+  - method: GET
+    path:
+      - "{{BaseURL}}"
 
     payloads:
       pathtraversal:
@@ -56,42 +53,12 @@ http:
 
     fuzzing:
       - part: query
-        mode: single
-        keys:
-          - cat
-          - dir
-          - action
-          - board
-          - date
-          - detail
-          - file
-          - download
-          - path
-          - folder
-          - prefix
-          - include
-          - page
-          - inc
-          - locate
-          - show
-          - doc
-          - site
-          - type
-          - view
-          - content
-          - document
-          - layout
-          - mod
-          - conf
-          - url
-          - img
-          - image
-          - images
+        mode: multiple
         fuzz:
           - "{{pathtraversal}}"
 
       - part: query
-        mode: single
+        mode: multiple
         values:
           - "^(./|../|/)|(.html|.htm|.xml|.conf|.cfg|.log|.txt|.pdf|.doc|.docx|.xls|.csv|.png|.jpg|.gif)$"
         fuzz:
@@ -119,4 +86,3 @@ http:
         part: body
         regex:
           - '(<system.webServer[\s\S]+<\/system.webServer>)'
-# digest: 490a0046304402204f25e304b713186e620bc4448b9277a9874b77763bbf31e8b099b97bbcab85c702207be12ef346bdc11f03b226da7811a9f0fccbf6dc7e818020cdd707dade3c7508:922c64590222798bb761d5b6d8e72950

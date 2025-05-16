@@ -1,11 +1,10 @@
 id: reflected-xss
 
 info:
-  name: Reflected Cross-Site Scripting
-  author: pdteam,0xKayala
+  name: fuzz reflected xss
+  author: pdteam,0xKayala,leadlife
   severity: medium
-  metadata:
-    max-request: 1
+  description: the template fuzz all params
   tags: xss,rxss,dast
 
 variables:

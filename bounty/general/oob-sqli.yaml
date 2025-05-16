@@ -1,10 +1,11 @@
-id: OOB-SQLI-2
+id: oob-sqli
 
 info:
-  name: oob-sqli-2
+  name: oob-sqli
   author: MR.iambatman
   severity: high
   description: oob sqli
+  tags: sqli,oob,header-sqli,lfa
 
 http:
   - raw:
@@ -23,7 +24,7 @@ http:
         Content-Type: application/x-www-form-urlencoded
       
     payloads:
-      header: helpers/payloads/request-headers.txt
+      header: "helper/http-header.txt"
     matchers-condition: and 
     matchers:
       - type: word
