@@ -19,6 +19,7 @@ http:
         Content-Type: text/plain
 
         {{randstr}}
+
       - |
         GET /testing-put.txt HTTP/1.1
         Host: {{Hostname}}

@@ -5,6 +5,7 @@ info:
   name: Blind XXE
   author: geeknik
   severity: high
+  tags: xxe
 
 http:
   - raw:
