@@ -1,7 +1,7 @@
-id: Authorization
+id: http-authorization
 
 info:
-  name: Authorization
+  name: http-authorization
   author: lu3ky-13
   severity: info
 
