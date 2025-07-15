@@ -2,7 +2,7 @@ id: composer-disclosure
 info:
   name: composer - disclosure
   author: leadlife
-  severity: high
+  severity: info
   description: 配置文件泄露-依赖文件泄漏漏洞
   metadata:
     verified: true
